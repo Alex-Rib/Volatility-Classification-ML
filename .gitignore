@@ -1,0 +1,29 @@
+# R files
+.Rhistory
+.RData
+.Rproj.user
+*.Rproj
+
+# Data files
+DATA/
+*.rds
+*.csv
+
+# Results and plots
+RESULTATS/
+*.png
+*.pdf
+Rplots.pdf
+
+# System files
+.DS_Store
+.Rapp.history
+
+# RStudio files
+.Rproj.user/
+
+# Session Data files
+.RData
+
+# User-specific files
+.Ruserdata
