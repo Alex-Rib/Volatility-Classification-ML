@@ -1,6 +1,6 @@
 # Volatilité boursière et facteurs exogènes : une analyse comparative sur le CAC40, le DAX et le S&P500
 
-Projet d'analyse cherchant à regarder s'il existe une relation entre la volatilité des marchés boursiers (CAC40, DAX, S&P500) les conditions météorologiques et le calendrier dans les villes hôtes de ces indices (Paris, Francfort, New York).
+Projet d'analyse cherchant à regarder s'il existe une relation entre la volatilité des marchés boursiers (CAC40, DAX, S&P500) les conditions météorologiques(dans les villes hôtes de ces indices : Paris, Francfort etNew York) et le calendrier.
 
 ## 📊 Description
 
