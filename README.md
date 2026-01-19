@@ -1,5 +1,11 @@
 # Volatilité boursière et facteurs exogènes : une analyse comparative sur le CAC40, le DAX et le S&P500
 
+![R](https://img.shields.io/badge/R-4.0%2B-blue)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-Classification-orange)
+![Finance](https://img.shields.io/badge/Finance-Market_Prediction-green)
+![Tidyverse](https://img.shields.io/badge/Tidyverse-Enabled-9cf)
+![Status](https://img.shields.io/badge/Status-Educational-yellow)
+
 Projet d'analyse cherchant à regarder s'il existe une relation entre la volatilité des marchés boursiers (CAC40, DAX, S&P500) les conditions météorologiques(dans les villes hôtes de ces indices : Paris, Francfort etNew York) et le calendrier.
 
 ## 📊 Description
