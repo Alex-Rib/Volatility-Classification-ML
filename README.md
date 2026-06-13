@@ -124,4 +124,4 @@ Les résultats incluent :
 
 ## 👨‍💻 Auteur
 
-Alexandre R. - Master mathématiques appliquées - Université Paris Cité
+Alexandre R. - Université Paris Cité
