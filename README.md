@@ -1,4 +1,4 @@
-# Volatilité boursière et facteurs exogènes : une analyse comparative sur le CAC40, le DAX et le S&P500
+# Market Volatility and Exogenous Factors: A Comparative Analysis on the CAC40, DAX, and S&P500
 
 ![R](https://img.shields.io/badge/R-4.0%2B-blue)
 ![Machine Learning](https://img.shields.io/badge/Machine_Learning-Classification-orange)
@@ -6,29 +6,29 @@
 ![Tidyverse](https://img.shields.io/badge/Tidyverse-Enabled-9cf)
 ![Status](https://img.shields.io/badge/Status-Educational-yellow)
 
-Projet d'analyse cherchant à regarder s'il existe une relation entre la volatilité des marchés boursiers (CAC40, DAX, S&P500) les conditions météorologiques(dans les villes hôtes de ces indices : Paris, Francfort etNew York) et le calendrier.
+An analytical project investigating whether a relationship exists between stock market volatility (CAC40, DAX, S&P500), weather conditions in the host cities of these indices (Paris, Frankfurt, and New York), and the calendar.
 
 ## 📊 Description
 
-Ce projet combine des données météorologiques et des données calendaires avec des données boursières pour entraîner des modèles de machine learning dans l'objectif de voir s'il est possible de prédire un régime de volatilité à l'aide de ces facteurs. 
+This project combines weather and calendar data with financial market data to train machine learning models, aiming to determine whether it is possible to predict volatility regimes using these exogenous factors. 
 
-### Indices analysés
+### Analyzed Indices
 - **CAC40** (France) - Paris
-- **DAX** (Allemagne) - Francfort  
+- **DAX** (Germany) - Frankfurt  
 - **S&P500** (USA) - New York
 
-### Période d'analyse
-Janvier 2010 - Janvier 2025
+### Analysis Period
+January 2010 - January 2025
 
-## 🚀 Installation
+## Installation
 
-### Prérequis
-- R (version 4.0 ou supérieure)
-- RStudio (recommandé)
+### Prerequisites
+- R (version 4.0 or higher)
+- RStudio (recommended)
 
-### Packages R requis
+### Required R Packages
 
-Le script installe automatiquement les packages manquants, mais vous pouvez les installer manuellement :
+The script automatically installs missing packages, but you can also install them manually:
 
 ```r
 install.packages(c(
@@ -38,90 +38,90 @@ install.packages(c(
 ))
 ```
 
-## 📝 Utilisation
+## 📝 Usage
 
-### Étape 1 : Préparation des données
+### Step 1: Data Preparation
 
-Exécutez d'abord le script de préparation des données :
+First, run the data preparation script:
 
 ```bash
 Rscript data.frame.R
 ```
 
-Ce script :
-- Récupère les données météorologiques via l'API Open-Meteo
-- Télécharge les données boursières via Yahoo Finance
-- Calcule la volatilité (méthode Garman-Klass)
-- Crée les ensembles train/test
-- Sauvegarde les datasets dans le dossier `DATA/`
+This script:
+- Fetches historical weather data via the Open-Meteo API
+- Downloads stock market data via Yahoo Finance
+- Computes volatility using the Garman-Klass method
+- Creates the train/test splits
+- Saves the datasets into the `DATA/` directory
 
-### Étape 2 : Modélisation et analyse
+### Step 2: Modeling and Analysis
 
-Ensuite, exécutez le script d'analyse :
+Next, run the main analysis script:
 
 ```bash
 Rscript volatility_and_weather.R
 ```
 
-Ce script :
-- Charge les données préparées
-- Entraîne 6 modèles différents (GLM, GLMNet, RPART, Random Forest, GBM, XGBoost)
-- Évalue les performances (AUC, ROC, matrice de confusion)
-- Génère les visualisations
-- Sauvegarde les résultats dans `RESULTATS/`
+This script:
+- Loads the preprocessed data
+- Trains 6 different models (GLM, GLMNet, RPART, Random Forest, gbm, XGBoost)
+- Evaluates performance metrics (AUC, ROC curves, confusion matrix)
+- Generates visualizations
+- Saves all outputs into the `RESULTATS/` directory
 
-## 📂 Structure du projet
+## 📂 Project Structure
 
 ```
 volatility/
 ├── README.md
-├── data.frame.R              # Préparation des données
-├── volatility_and_weather.R  # Modélisation et analyse
-├── DATA/                     # Datasets générés (non versionné)
+├── data.frame.R              # Data preparation and preprocessing
+├── volatility_and_weather.R  # Modeling and analysis pipeline
+├── DATA/                     # Generated datasets (git-ignored)
 │   ├── CAC40.rds
 │   ├── DAX.rds
 │   ├── SP500.rds
 │   └── *_train.rds / *_test.rds
-└── RESULTATS/                # Graphiques générés (non versionné)
+└── RESULTATS/                # Generated plots and figures (git-ignored)
     ├── CAC40/
     ├── DAX/
     └── SP500/
 ```
 
-## 🔍 Méthodologie
+## 🔍 Methodology
 
-### Variables utilisées
-- **Volatilité** : Calculée avec la méthode Garman-Klass
-- **Météo** : Température, précipitations
-- **Temporelles** : Jour de la semaine, mois, saison
+### Features Used
+- **Volatility**: Computed using the Garman-Klass estimator
+- **Weather**: Temperature, precipitation
+- **Temporal**: Day of the week, month, season
 
-### Modèles entraînés
-1. Régression logistique (GLM)
-2. Régression logistique régularisée (GLMNet)
-3. Arbre de décision (RPART)
-4. Forêt aléatoire (Random Forest)
+### Trained Models
+1. Logistic Regression (GLM)
+2. Regularized Logistic Regression (GLMNet)
+3. Decision Tree (RPART)
+4. Random Forest
 5. Gradient Boosting Machine (GBM)
 6. XGBoost
 
-### Validation
-- Split temporel 80/20
-- Validation croisée avec fenêtre glissante (time series)
-- Métriques : AUC, Sensibilité, Spécificité, Accuracy
+### Validation Protocol
+- 80/20 time-series split
+- Rolling-window cross-validation (time series)
+- Performance metrics: AUC, Sensitivity, Specificity, Accuracy
 
-## 📈 Résultats
+## 📈 Results
 
-Les résultats incluent :
-- Courbes ROC pour chaque modèle
-- Comparaison des performances (AUC)
-- Heatmaps des métriques
-- Importance des variables
-- Graphiques de volatilité temporelle
+The generated outputs include:
+- ROC curves for each model
+- Performance comparison charts (AUC comparison)
+- Performance metric heatmaps
+- Feature importance plots
+- Historical volatility timeline plots
 
-## 🌐 Sources de données
+##  Data Sources
 
-- **Données météo** : [Open-Meteo Archive API](https://open-meteo.com/)
-- **Données boursières** : Yahoo Finance (via package `tidyquant`)
+- **Weather Data**: [Open-Meteo Archive API](https://open-meteo.com/)
+- **Market Data**: Yahoo Finance (retrieved via the `tidyquant` package)
 
-## 👨‍💻 Auteur
+##  Author
 
 Alexandre R. - Université Paris Cité
